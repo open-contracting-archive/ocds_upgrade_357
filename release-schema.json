@@ -55,6 +55,7 @@
       }
     },
     "Amendment": {
+      "type": ["object","null"],
       "properties": {
         "id":{
             "title":"ID",
