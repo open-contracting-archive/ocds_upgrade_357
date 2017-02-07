@@ -1,0 +1,1 @@
+Applies updates to version 1.1 of the schema to handle amendments. 

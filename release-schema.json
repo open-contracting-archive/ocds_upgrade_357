@@ -1,0 +1,94 @@
+{
+  "definitions": {
+    "Tender": {
+      "properties": {
+        "amendments": {
+          "title":"Amendments",
+          "description":"A tender amendment is a formal change to the tender, and generally involves the publication of a new tender notice/release. The rationale and a description of the changes made can be provided here.",
+          "type":["array","null"],
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        },
+        "amendment": {
+          "deprecated": {
+            "deprecatedVersion": "1.1",
+            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array."
+          }
+        }
+      }
+    },
+    "Award": {
+      "properties": {
+        "amendments": {
+          "title":"Amendments",
+          "description":"An award amendment is a formal change to the details of the award, and generally involves the publication of a new award notice/release. The rationale and a description of the changes made can be provided here.",
+          "type":["array","null"],
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        },
+        "amendment": {
+          "deprecated": {
+            "deprecatedVersion": "1.1",
+            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array."
+          }
+        }
+      }
+    },
+    "Contract": {
+      "properties": {
+        "amendments": {
+          "title":"Amendments",
+          "description":"A contract amendment is a formal change to, or extension of, a contract, and generally involves the publication of a new contract notice/release, or some other documents detailing the change. The rationale and a description of the changes made can be provided here.",
+          "type":["array","null"],
+          "items": {
+            "$ref": "#/definitions/Amendment"
+          }
+        },
+        "amendment": {
+          "deprecated": {
+            "deprecatedVersion": "1.1",
+            "description": "The single amendment object has been deprecated in favour of including amendments in an ammendments (plural) array."
+          }
+        }
+      }
+    },
+    "Amendment": {
+      "properties": {
+        "id":{
+            "title":"ID",
+            "description":"An identifier for this amendment: often the amendment number",
+            "type":["string","null"]
+        },
+        "date": {
+              "description":"The date of this amendment."
+        },
+        "description": {
+          "title": "Description",
+          "description": "A free text, or semi-structured, description of the changes made in this amendment.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "changes": {
+          "deprecated": {
+            "deprecatedVersion": "1.1",
+            "description": "A free-text or semi-structured string describing the changes made in each amendment can be provided in the amendment.description field. To provide structured information on the fields that have changed, publishers should provide releases indicating the state of the contracting process before and after the amendment.  "
+          }
+        },
+        "amendsReleaseID":{
+          "title":"Amended release (identifier)",
+          "description":"Provide the identifier of the OCDS release which provides the values for this contracting process **before** the amendment was made.",
+          "type":["string","null"]
+        },
+        "releaseID":{
+            "title":"Amending release (identifier)",
+            "description":"Provide the identifier of the OCDS release that provides the values for this contracting process **after** the amendment was made.",
+            "type":["string","null"]
+        }
+      }
+    }
+  }
+}
